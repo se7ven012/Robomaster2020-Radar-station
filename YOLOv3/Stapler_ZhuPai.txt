@@ -1,0 +1,135 @@
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165300.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165303.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165305.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165307.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165309.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165311.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165313.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165314.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165316.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165320.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165323.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165326.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165330.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165341.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165343.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165346.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165353.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165355.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165358.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165404.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165409.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165412.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165415.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165418.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165420.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165424.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165426.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165429.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165432.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165439.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165444.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165453.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165502.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165504.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165507.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165509.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165512.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165516.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165541.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165547.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165556.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165558.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165603.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165606.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165609.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165617.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165619.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165628.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165631.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165634.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165636.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165638.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165643.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165647.jpg
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165739.jpg 288,594,2434,2926,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165740.jpg 372,545,2394,2637,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165744.jpg 691,753,2248,2580,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165747.jpg 612,1072,1707,2389,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165752.jpg 811,811,2004,2828,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165754.jpg 683,372,2106,3249,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165756.jpg 416,199,2235,3130,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165759.jpg 496,749,2359,3125,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165805.jpg 266,430,1951,2633,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165815.jpg 589,1037,2062,2970,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165819.jpg 696,1658,2222,3001,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165822.jpg 483,1015,1920,3032,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165826.jpg 1094,638,2680,2340,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165839.jpg 687,793,2226,3781,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165841.jpg 873,1095,1902,2966,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165843.jpg 847,1409,1787,2664,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165844.jpg 918,1316,1964,2637,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165845.jpg 953,1321,2111,2695,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165849.jpg 603,1267,1689,2731,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165851.jpg 847,1365,1995,2766,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165856.jpg 909,1046,2159,3240,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165857.jpg 270,833,2745,3950,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165859.jpg 953,833,1973,2473,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165901.jpg 1006,1281,2164,2735,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165903.jpg 962,1077,2426,3063,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165906.jpg 1308,939,2701,2558,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165914.jpg 612,953,1929,2748,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165916.jpg 350,1259,1818,2677,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165918.jpg 283,1276,1800,2890,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_165920.jpg 563,962,2195,2926,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170004.jpg 696,1108,2195,2877,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170009.jpg 1223,435,2973,2357,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170011.jpg 1559,541,3136,2387,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170015.jpg 1510,960,2830,2427,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170016.jpg 1223,711,2857,2261,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170019.jpg 1144,761,2561,2187,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170023.jpg 1243,478,2670,2473,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170025.jpg 1506,535,2897,2603,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170044.jpg 1140,817,2956,2244,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170048.jpg 708,578,3385,2111,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170051.jpg 957,1764,1889,3076,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170055.jpg 1096,1597,2134,3165,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170101.jpg 1715,1598,3000,2618,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170104.jpg 1383,1237,2681,2269,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170107.jpg 1260,1180,2707,2340,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170109.jpg 1330,1167,2753,2237,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170110.jpg 576,718,2208,3076,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170111.jpg 354,589,1738,3169,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170113.jpg 405,545,3193,2956,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170114.jpg 229,472,3638,2603,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170119.jpg 368,1108,2155,2797,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170122.jpg 728,399,3336,2460,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170124.jpg 1303,957,2817,2733,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170127.jpg 478,1223,1694,2921,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170140.jpg 776,1033,2071,3032,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170201.jpg 243,824,1911,2881,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170203.jpg 425,1064,1853,2744,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170206.jpg 771,1267,2088,2815,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170213.jpg 1024,1613,2195,3099,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170215.jpg 1108,1294,2155,2974,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170217.jpg 1162,1290,2328,3112,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170221.jpg 740,1241,2301,3453,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170222.jpg 767,1152,2306,3369,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170224.jpg 483,1565,2124,2992,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170233.jpg 909,279,2368,3413,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170249.jpg 860,1414,2137,3444,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170308.jpg 1020,1432,1641,2323,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170311.jpg 1011,1502,1601,2371,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170313.jpg 1135,1458,1845,2398,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170324.jpg 643,1033,1951,2677,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170331.jpg 850,631,2064,2591,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170339.jpg 1141,412,2795,1962,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170412.jpg 1453,103,3073,2254,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170416.jpg 1237,352,3089,2507,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170420.jpg 1130,834,3076,2483,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170444.jpg 412,926,2186,2917,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170507.jpg 962,297,2124,2930,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170514.jpg 229,638,2900,1798,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170515.jpg 581,212,2009,3378,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170516.jpg 696,447,1960,3475,1
+/home/se7ven/Desktop/YOLOv3/OpenLabeling/main/input/IMG_20191028_170517.jpg 137,935,1805,2708,1
