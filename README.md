@@ -1,2 +1,1 @@
-# Scanner
-## Robomasters 2020 radar station project
+# Robomasters 2020 radar station project
