@@ -1,7 +1,10 @@
 """
 Retrain the YOLO model for your own dataset.
 """
+import sys
 import os
+sys.path.append(os.path.join(os.getcwd(), 'with_keras/'))
+
 import numpy as np
 import keras.backend as K
 from keras.layers import Input, Lambda

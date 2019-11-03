@@ -1,0 +1,11 @@
+# python
+__pycache__
+logs
+
+# vscode
+.vscode
+
+# model files
+yolo.h5
+yolov3.weights
+

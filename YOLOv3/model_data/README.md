@@ -1,3 +1,0 @@
-## H5.file
-
-Download "zhupai_weights.h5" from ... 
