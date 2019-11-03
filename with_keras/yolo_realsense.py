@@ -185,6 +185,11 @@ def detect_video(yolo, video_path, output_path=""):
         targets = yolo.detect_image(image_PIL)
         print('Found {} boxes'.format(len(targets)))
 
+        lidar_map = np.zeros([800, 800], np.uint8)
+        for unit in range(100, 1100, 100):
+            cv2.circle(lidar_map, (0, 0), unit, 127, 2)
+            cv2.circle(lidar_map, (0, 0), unit-50, 63, 2)
+
         lidar_targets = []
         for target in targets:
             # label, score, (left, top, right, bottom)
@@ -197,7 +202,11 @@ def detect_video(yolo, video_path, output_path=""):
             angle = math.radians(target_point_x / 8)
             lidar_x = int(round(math.sin(angle) * depth * 100))
             lidar_y = int(round(math.cos(angle) * depth * 100))
-            lidar_targets.append([lidar_x, lidar_y])
+            point = (lidar_y, lidar_x)
+
+            cv2.circle(lidar_map, point, 1, 255, 2)
+            cv2.putText(lidar_map, text=target[0], org=point, fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+                        fontScale=0.50, color=191, thickness=2)
 
             print("depth : ", depth)
             print("target : ", target)
@@ -215,16 +224,6 @@ def detect_video(yolo, video_path, output_path=""):
             curr_fps = 0
         cv2.putText(result, text=fps, org=(3, 15), fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                     fontScale=0.50, color=(255, 0, 0), thickness=2)
-
-        lidar_map = np.zeros([800, 800], np.uint8)
-
-        for unit in range(100, 1100, 100):
-            cv2.circle(lidar_map, (0, 0), unit, 127, 2)
-            cv2.circle(lidar_map, (0, 0), unit-50, 63.5, 2)
-
-        # print(lidar_targets)
-        for point in lidar_targets:
-            cv2.circle(lidar_map, tuple(reversed(point)), 1, 255, 2)
 
         cv2.namedWindow("result", cv2.WINDOW_NORMAL)
         cv2.imshow("result", result)
