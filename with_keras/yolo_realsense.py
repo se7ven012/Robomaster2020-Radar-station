@@ -177,7 +177,7 @@ def detect_video(yolo, video_path, output_path=""):
             continue
 
         # Convert images to numpy arrays
-        # depth_image = np.asanyarray(depth_frame.get_data())
+        depth_image = np.asanyarray(depth_frame.get_data())
         color_image = np.asanyarray(color_frame.get_data())
         image_PIL = Image.fromarray(color_image)
 
@@ -198,7 +198,40 @@ def detect_video(yolo, video_path, output_path=""):
             target_point_y = target[2][1] + \
                 int((target[2][3] - target[2][1]) / 2)
 
-            depth = depth_frame.get_distance(target_point_x, target_point_y)
+            #----------------------------------------------#
+            #Start
+
+            left,top = target[2][0],target[2][1]
+            right,bottom = target[2][2],target[2][3]
+
+            #取目标矩阵长宽，矩阵可以取小些排除大部分噪音,可以试一下其他值（2，3，4）
+            divide = 3
+            recY = (bottom- top) / divide
+            recX = (right - left) / divide
+            rec_depth = np.array()
+
+            #取目标矩阵深度
+            for Ypix in recY:
+                for Xpix in recX:
+                    rec_depth.append(int(depth_image[Ypix,Xpix] / 10))
+            #众数填充
+            for depth in rec_depth:
+                if depth == 0:
+                    depth = np.bincount(rec_depth)
+            rec_depth.resize((recX,recY))
+            rec_depth_image = Image.fromarray(rec_depth)
+
+            #三种滤波器都试一下效果
+            result = cv2.medianBlur(rec_depth_image, 5)
+            #result = cv2.blur(rec_depth_image,(5,5))
+            #result = cv2.GaussianBlur(rec_depth_image,(7,7),0)
+
+            depth = int(np.mean(np.array(result)))
+
+            #End
+            #----------------------------------------------#
+
+            #depth = depth_frame.get_distance(target_point_x, target_point_y)
             angle = math.radians(target_point_x / 8)
             lidar_x = int(round(math.sin(angle) * depth * 100))
             lidar_y = int(round(math.cos(angle) * depth * 100))
