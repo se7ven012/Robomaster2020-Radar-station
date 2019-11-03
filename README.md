@@ -1,36 +1,28 @@
 # Robomasters 2020 radar station project
 
 - [Robomasters 2020 radar station project](#robomasters-2020-radar-station-project)
-  - [keras-yolo3](#keras-yolo3)
-  - [Introduction](#introduction)
-  - [Quick Start](#quick-start)
+  - [with keras-yolo3](#with-keras-yolo3)
+    - [Quick Start](#quick-start)
     - [Usage](#usage)
-  - [Training](#training)
+    - [Training](#training)
   - [Some issues to know](#some-issues-to-know)
-
-## keras-yolo3
-
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
-
-## Introduction
-
-A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [allanzelener/YAD2K](https://github.com/allanzelener/YAD2K).
-
 
 ---
 
-## Quick Start
+## with keras-yolo3
+
+A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [allanzelener/YAD2K](https://github.com/allanzelener/YAD2K).
+
+### Quick Start
 
 1. Download YOLOv3 weights from [YOLO website](http://pjreddie.com/darknet/yolo/).
 2. Convert the Darknet YOLO model to a Keras model.
 3. Run YOLO detection.
 
 ```
-cd keras
-wget https://pjreddie.com/media/files/yolov3.weights
-python convert.py yolov3.cfg yolov3.weights model_data/yolo.h5
-python yolo_video.py [OPTIONS...] --image, for image detection mode, OR
-python yolo_video.py [video_path] [output_path (optional)]
+wget https://pjreddie.com/media/files/yolov3.weights -P model_data/
+python model_data/convert.py model_data/yolov3.cfg model_data/yolov3.weights model_data/yolo.h5
+python with_keras/yolo_video.py
 ```
 
 For Tiny YOLOv3, just do in a similar way, just specify model path and anchor path with `--model model_file` and `--anchors anchor_file`.
@@ -60,7 +52,7 @@ optional arguments:
 
 4. MultiGPU usage: use `--gpu_num N` to use N GPUs. It is passed to the [Keras multi_gpu_model()](https://keras.io/utils/#multi_gpu_model).
 
-## Training
+### Training
 
 1. Generate your own annotation file and class names file.  
     One row for one image;  
@@ -74,7 +66,7 @@ optional arguments:
     ...
     ```
 
-2. Make sure you have run `python convert.py -w yolov3.cfg yolov3.weights model_data/yolo_weights.h5`  
+2. Make sure you have run `python model_data/convert.py -w model_data/yolov3.cfg model_data/yolov3.weights model_data/yolo_weights.h5`  
     The file model_data/yolo_weights.h5 is used to load pretrained weights.
 
 3. Modify train.py and start training.  
@@ -83,9 +75,9 @@ optional arguments:
     Remember to modify class path or anchor path, with `--classes class_file` and `--anchors anchor_file`.
 
 If you want to use original pretrained weights for YOLOv3:  
-    1. `wget https://pjreddie.com/media/files/darknet53.conv.74`  
+    1. `wget https://pjreddie.com/media/files/darknet53.conv.74 -P model_data/`  
     2. rename it as darknet53.weights  
-    3. `python convert.py -w darknet53.cfg darknet53.weights model_data/darknet53_weights.h5`  
+    3. `python model_data/convert.py -w model_data/darknet53.cfg model_data/darknet53.weights model_data/darknet53_weights.h5`  
     4. use model_data/darknet53_weights.h5 in train.py
 
 ---

@@ -146,7 +146,7 @@ class YOLO(object):
                 out_scores[i], 2), (left, top, right, bottom)])
 
         end = timer()
-        print(end - start)
+        print("estimated times : ", end - start)
         return results
 
     def close_session(self):
@@ -177,14 +177,14 @@ def detect_video(yolo, video_path, output_path=""):
             continue
 
         # Convert images to numpy arrays
-        depth_image = np.asanyarray(depth_frame.get_data())
+        # depth_image = np.asanyarray(depth_frame.get_data())
         color_image = np.asanyarray(color_frame.get_data())
         image_PIL = Image.fromarray(color_image)
 
         # return the result of detection
         targets = yolo.detect_image(image_PIL)
-
         print('Found {} boxes'.format(len(targets)))
+
         lidar_targets = []
         for target in targets:
             # label, score, (left, top, right, bottom)
@@ -193,14 +193,14 @@ def detect_video(yolo, video_path, output_path=""):
             target_point_y = target[2][1] + \
                 int((target[2][3] - target[2][1]) / 2)
 
-            depth = int(depth_image[target_point_y][target_point_x] / 10)
+            depth = depth_frame.get_distance(target_point_x, target_point_y)
             angle = math.radians(target_point_x / 8)
-            lidar_x = int(math.tan(angle) * depth)
-            lidar_y = int(math.cos(angle) * depth)
+            lidar_x = int(round(math.sin(angle) * depth * 100))
+            lidar_y = int(round(math.cos(angle) * depth * 100))
             lidar_targets.append([lidar_x, lidar_y])
 
             print("depth : ", depth)
-            print(target)
+            print("target : ", target)
 
         result = color_image
 
@@ -216,10 +216,15 @@ def detect_video(yolo, video_path, output_path=""):
         cv2.putText(result, text=fps, org=(3, 15), fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                     fontScale=0.50, color=(255, 0, 0), thickness=2)
 
-        lidar_map = np.zeros([2000, 2000], np.uint8)
+        lidar_map = np.zeros([800, 800], np.uint8)
+
+        for unit in range(100, 1100, 100):
+            cv2.circle(lidar_map, (0, 0), unit, 127, 2)
+            cv2.circle(lidar_map, (0, 0), unit-50, 63.5, 2)
+
+        # print(lidar_targets)
         for point in lidar_targets:
-            cv2.circle(lidar_map, tuple(point), 3, 255, 1)
-            # lidar_map[point[1]][point[0]] = 255
+            cv2.circle(lidar_map, tuple(reversed(point)), 1, 255, 2)
 
         cv2.namedWindow("result", cv2.WINDOW_NORMAL)
         cv2.imshow("result", result)
