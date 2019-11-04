@@ -146,7 +146,7 @@ class YOLO(object):
                 out_scores[i], 2), (left, top, right, bottom)])
 
         end = timer()
-        print("estimated times : ", end - start)
+        # print("estimated times : ", end - start)
         return results
 
     def close_session(self):
@@ -162,6 +162,11 @@ def detect_video(yolo, video_path, output_path=""):
     config.enable_stream(rs.stream.depth, 640, 480, rs.format.z16, 30)
     config.enable_stream(rs.stream.color, 640, 480, rs.format.bgr8, 30)
     pipeline.start(config)
+
+    lidar_map = np.zeros([800, 800], np.uint8)
+    for unit in range(100, 1100, 100):
+        cv2.circle(lidar_map, (0, 0), unit, 127, 2)
+        cv2.circle(lidar_map, (0, 0), unit-50, 63, 2)
 
     video_fps = 30
     video_size = (640, 480)
@@ -179,73 +184,63 @@ def detect_video(yolo, video_path, output_path=""):
         # Convert images to numpy arrays
         depth_image = np.asanyarray(depth_frame.get_data())
         color_image = np.asanyarray(color_frame.get_data())
-        image_PIL = Image.fromarray(color_image)
+        draw_image = lidar_map.copy()
 
         # return the result of detection
+        image_PIL = Image.fromarray(color_image)
         targets = yolo.detect_image(image_PIL)
-        print('Found {} boxes'.format(len(targets)))
-
-        lidar_map = np.zeros([800, 800], np.uint8)
-        for unit in range(100, 1100, 100):
-            cv2.circle(lidar_map, (0, 0), unit, 127, 2)
-            cv2.circle(lidar_map, (0, 0), unit-50, 63, 2)
 
         lidar_targets = []
         for target in targets:
-            # label, score, (left, top, right, bottom)
-            target_point_x = target[2][0] + \
-                int((target[2][2] - target[2][0]) / 2)
-            target_point_y = target[2][1] + \
-                int((target[2][3] - target[2][1]) / 2)
+            label, score, left, top, right, bottom = target[0], target[1], *target[2]
 
-            #----------------------------------------------#
-            #Start
+            diff_x, diff_y = right-left, bottom-top
+            target_point_x = left + int(round(diff_x * 0.5))
+            target_point_y = top + int(round(diff_y * 0.5))
 
-            left,top = target[2][0],target[2][1]
-            right,bottom = target[2][2],target[2][3]
+            # 取目标矩阵长宽，矩阵可以取小些排除大部分噪音,可以试一下其他值（2，3，4）
+            recY = math.floor(diff_y * 0.333333333)
+            recX = math.floor(diff_x * 0.333333333)
 
-            #取目标矩阵长宽，矩阵可以取小些排除大部分噪音,可以试一下其他值（2，3，4）
-            divide = 3
-            recY = (bottom- top) / divide
-            recX = (right - left) / divide
-            rec_depth = np.array()
+            # 取目标矩阵深度
+            rect_top, rect_left = top+recY, left+recX
+            # rec_depth = []
+            # for rect_y in range(rect_top, rect_top + recY):
+            #     for rect_x in range(rect_left, rect_left + recX):
+            #         rec_depth.append(depth_frame.get_distance(rect_x, rect_y))
+            rec_depth = [depth_frame.get_distance(rect_x, rect_y) for rect_x in range(
+                rect_left, rect_left + recX) for rect_y in range(rect_top, rect_top + recY)]
 
-            #取目标矩阵深度
-            for Ypix in recY:
-                for Xpix in recX:
-                    rec_depth.append(int(depth_image[Ypix,Xpix] / 10))
-            #众数填充
-            for depth in rec_depth:
-                if depth == 0:
-                    depth = np.bincount(rec_depth)
-            rec_depth.resize((recX,recY))
-            rec_depth_image = Image.fromarray(rec_depth)
+            # 过滤掉 0 的数字
+            rec_depth = np.array(rec_depth, np.float32)
+            rec_depth_nonzero = list(
+                filter(lambda x: int(round(x*100)) != 0, rec_depth))
+            # 取平均值, 除数 +1 防止除与 0 的情况出现
+            mean_depth = sum(rec_depth_nonzero) / (len(rec_depth_nonzero) + 1)
 
-            #三种滤波器都试一下效果
-            result = cv2.medianBlur(rec_depth_image, 5)
-            #result = cv2.blur(rec_depth_image,(5,5))
-            #result = cv2.GaussianBlur(rec_depth_image,(7,7),0)
+            # 将原来为零的数替换成平均值
+            rec_depth[np.float32(np.round(rec_depth*100)) == 0] = mean_depth
+            rec_depth.resize((recX, recY))
 
-            depth = int(np.mean(np.array(result)))
-
-            #End
-            #----------------------------------------------#
+            # 三种滤波器都试一下效果
+            result = cv2.medianBlur(rec_depth, 3)
+            # result = cv2.blur(rec_depth, (5, 5))
+            # #result = cv2.GaussianBlur(rec_depth_image,(7,7),0)
+            depth = np.mean(result)
 
             #depth = depth_frame.get_distance(target_point_x, target_point_y)
             angle = math.radians(target_point_x / 8)
             lidar_x = int(round(math.sin(angle) * depth * 100))
             lidar_y = int(round(math.cos(angle) * depth * 100))
-            point = (lidar_y, lidar_x)
 
-            cv2.circle(lidar_map, point, 1, 255, 2)
-            cv2.putText(lidar_map, text=target[0], org=point, fontFace=cv2.FONT_HERSHEY_SIMPLEX,
+            point = (lidar_y, lidar_x)
+            cv2.circle(draw_image, point, 1, 255, 2)
+            cv2.putText(draw_image, text=label, org=point, fontFace=cv2.FONT_HERSHEY_SIMPLEX,
                         fontScale=0.50, color=191, thickness=2)
 
-            print("depth : ", depth)
-            print("target : ", target)
+            # print("depth : ", depth)
 
         result = color_image
-
         curr_time = timer()
         exec_time = curr_time - prev_time
         prev_time = curr_time
@@ -260,7 +255,10 @@ def detect_video(yolo, video_path, output_path=""):
 
         cv2.namedWindow("result", cv2.WINDOW_NORMAL)
         cv2.imshow("result", result)
-        cv2.imshow("lidar_map", lidar_map)
+        cv2.imshow("draw_image", draw_image)
+        
+        depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(depth_image, alpha=0.03), cv2.COLORMAP_JET)
+        cv2.imshow("depth_colormap", depth_colormap)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             break
 
