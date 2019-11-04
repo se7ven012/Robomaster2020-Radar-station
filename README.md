@@ -2,10 +2,13 @@
 
 - [Robomasters 2020 radar station project](#robomasters-2020-radar-station-project)
   - [with keras-yolo3](#with-keras-yolo3)
+    - [Environment](#environment)
     - [Quick Start](#quick-start)
-    - [Usage](#usage)
     - [Training](#training)
-  - [Some issues to know](#some-issues-to-know)
+  - [with_darknet](#withdarknet)
+    - [Environment](#environment-1)
+    - [Quick Start](#quick-start-1)
+  - [Achievement](#achievement)
 
 ---
 
@@ -13,44 +16,24 @@
 
 A Keras implementation of YOLOv3 (Tensorflow backend) inspired by [allanzelener/YAD2K](https://github.com/allanzelener/YAD2K).
 
+### Environment
+
+- Python 3.5.2
+- Keras 2.1.5
+- tensorflow 1.6.0
+- pyrealsense2 2.29.0.1124
+
 ### Quick Start
 
 1. Download YOLOv3 weights from [YOLO website](http://pjreddie.com/darknet/yolo/).
 2. Convert the Darknet YOLO model to a Keras model.
 3. Run YOLO detection.
 
-```
+```bash
 wget https://pjreddie.com/media/files/yolov3.weights -P model_data/
 python model_data/convert.py model_data/yolov3.cfg model_data/yolov3.weights model_data/yolo.h5
 python with_keras/yolo_video.py
 ```
-
-For Tiny YOLOv3, just do in a similar way, just specify model path and anchor path with `--model model_file` and `--anchors anchor_file`.
-
-### Usage
-Use --help to see usage of yolo_video.py:
-```
-usage: yolo_video.py [-h] [--model MODEL] [--anchors ANCHORS]
-                     [--classes CLASSES] [--gpu_num GPU_NUM] [--image]
-                     [--input] [--output]
-
-positional arguments:
-  --input        Video input path
-  --output       Video output path
-
-optional arguments:
-  -h, --help         show this help message and exit
-  --model MODEL      path to model weight file, default model_data/yolo.h5
-  --anchors ANCHORS  path to anchor definitions, default
-                     model_data/yolo_anchors.txt
-  --classes CLASSES  path to class definitions, default
-                     model_data/coco_classes.txt
-  --gpu_num GPU_NUM  Number of GPU to use, default 1
-  --image            Image detection mode, will ignore all positional arguments
-```
----
-
-4. MultiGPU usage: use `--gpu_num N` to use N GPUs. It is passed to the [Keras multi_gpu_model()](https://keras.io/utils/#multi_gpu_model).
 
 ### Training
 
@@ -82,21 +65,32 @@ If you want to use original pretrained weights for YOLOv3:
 
 ---
 
-## Some issues to know
+## with_darknet
 
-1. The test environment is
-    - Python 3.5.2
-    - Keras 2.1.5
-    - tensorflow 1.6.0
+### Environment
 
-2. Default anchors are used. If you use your own anchors, probably some changes are needed.
+- Python 3.5.2
+- pyrealsense2 2.29.0.1124
 
-3. The inference result is not totally the same as Darknet but the difference is small.
+### Quick Start
 
-4. The speed is slower than Darknet. Replacing PIL with opencv may help a little.
+1. Run YOLO detection.
 
-5. Always load pretrained weights and freeze layers in the first stage of training. Or try Darknet training. It's OK if there is a mismatch warning.
+```bash
+wget https://pjreddie.com/media/files/yolov3.weights -P model_data/
+python with_darknet/realsense.py
+```
 
-6. The training strategy is for reference only. Adjust it according to your dataset and your goal. And add further strategy if needed.
+## Achievement
 
-7. For speeding up the training process with frozen layers train_bottleneck.py can be used. It will compute the bottleneck features of the frozen model first and then only trains the last layers. This makes training on CPU possible in a reasonable time. See [this](https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html) for more information on bottleneck features.
+This is the expected result.
+
+<div align="center">
+  <img src=imgs/scanner_overall.gif width="720px"/>
+</div>
+
+At the same time, we designed a filter algorithm to get high precision and stable depth value.
+
+<div align="center">
+  <img src=imgs/scanner_holdon.gif width="720px"/>
+</div>

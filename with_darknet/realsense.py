@@ -1,5 +1,6 @@
 import sys
 import os
+sys.path.append(os.path.join(os.getcwd(), 'with_darknet/'))
 
 from PIL import Image, ImageFont, ImageDraw
 import numpy as np
@@ -12,8 +13,8 @@ import pdb
 
 def main():
     dn.set_gpu(0)
-    net = dn.load_net("cfg/yolov3.cfg".encode('utf-8'), "cfg/yolov3.weights".encode('utf-8'), 0)
-    meta = dn.load_meta("cfg/coco.data".encode('utf-8'))
+    net = dn.load_net("model_data/yolov3.cfg".encode('utf-8'), "model_data/yolov3.weights".encode('utf-8'), 0)
+    meta = dn.load_meta("model_data/coco.data".encode('utf-8'))
 
     # Configure depth and color streams
     pipeline = rs.pipeline()
@@ -38,22 +39,14 @@ def main():
     depth_image = np.asanyarray(depth_frame.get_data())
     color_image = np.asanyarray(color_frame.get_data())
 
-    # Apply colormap on depth image (image must be converted to 8-bit per pixel first)
-    depth_colormap = cv2.applyColorMap(cv2.convertScaleAbs(
-        depth_image, alpha=0.03), cv2.COLORMAP_JET)
-
-    # Stack both images horizontally
-    images = np.hstack((color_image, depth_colormap))
-
-    # image = Image.fromarray(color_image)
-    # r = dn.detect(net, meta, image)
+    image = Image.fromarray(color_image)
+    r = dn.detect(net, meta, image)
     # print(r)
 
     # Show images
     cv2.namedWindow('RealSense', cv2.WINDOW_AUTOSIZE)
-    cv2.imshow('RealSense', images)
+    cv2.imshow('RealSense', depth_image)
     cv2.imshow('color_image', color_image)
-    # cv2.imshow('depth_image', depth_image)
 
     cv2.waitKey(0)
     #         if cv2.waitKey(1) == 27:
