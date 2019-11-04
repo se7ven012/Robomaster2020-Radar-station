@@ -36,8 +36,10 @@ python with_keras/yolo_video.py
 ```
 
 ### Training
+1. Prepare your data.
+    We suggest using [OpenLabeling](https://github.com/Cartucho/OpenLabeling) for image labeling.
 
-1. Generate your own annotation file and class names file.  
+2. Generate your own annotation file and class names file.  
     One row for one image;  
     Row format: `image_file_path box1 box2 ... boxN`;  
     Box format: `x_min,y_min,x_max,y_max,class_id` (no space).  
@@ -49,10 +51,10 @@ python with_keras/yolo_video.py
     ...
     ```
 
-2. Make sure you have run `python model_data/convert.py -w model_data/yolov3.cfg model_data/yolov3.weights model_data/yolo_weights.h5`  
+3. Make sure you run `python model_data/convert.py -w model_data/yolov3.cfg model_data/yolov3.weights model_data/yolo_weights.h5`  
     The file model_data/yolo_weights.h5 is used to load pretrained weights.
 
-3. Modify train.py and start training.  
+4. Modify train.py and start training.  
     `python train.py`  
     Use your trained weights or checkpoint weights with command line option `--model model_file` when using yolo_video.py
     Remember to modify class path or anchor path, with `--classes class_file` and `--anchors anchor_file`.
@@ -83,14 +85,17 @@ python with_darknet/realsense.py
 
 ## Achievement
 
-This is the expected result.
+Radar UI is still under developing, so far it looks like:
 
 <div align="center">
   <img src=imgs/scanner_overall.gif width="720px"/>
 </div>
 
-At the same time, we designed a filter algorithm to get high precision and stable depth value.
+A filtering algorithm will be developed to get high precision and stable depth value.
 
 <div align="center">
   <img src=imgs/scanner_holdon.gif width="720px"/>
 </div>
+
+We expected to use multiple cameras fixed on a supporter to achieve 360-degree real-time scanning. This can also be achieved by changing camera direction to enable scanning in case of short of cameras.
+
