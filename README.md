@@ -85,13 +85,13 @@ python with_darknet/realsense.py
 
 ## Achievement
 
-Radar UI is still under developing, so far it looks like:
+So far it looks like:
 
 <div align="center">
   <img src=imgs/scanner_overall.gif width="720px"/>
 </div>
 
-A filtering algorithm will be developed to get high precision and stable depth value.
+A filtering algorithm will be develope to get high precision and stable depth value.
 
 <div align="center">
   <img src=imgs/scanner_holdon.gif width="720px"/>
