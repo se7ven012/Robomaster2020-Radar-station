@@ -1,6 +1,6 @@
-# Robomasters 2020 radar station project
+# Robomasters 2020 radar system
 
-- [Robomasters 2020 radar station project](#robomasters-2020-radar-station-project)
+- [Robomasters 2020 radar system](#robomasters-2020-radar-system)
   - [with keras-yolo3](#with-keras-yolo3)
     - [Environment](#environment)
     - [Quick Start](#quick-start)
